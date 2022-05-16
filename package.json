@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "darkmode-js": "^1.5.7",
+    "firebase": "^9.8.1",
     "tui-pagination": "^3.4.1"
   }
 }

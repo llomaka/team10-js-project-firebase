@@ -1,7 +1,7 @@
 import axios from 'axios';
 import onLoaderVisible from './onLoaderVisible';
 
-export const API_KEY = 'c4bc941c607c9762d744b272a86df854';
+export const API_KEY = 'fdf0e898687a376156944fbb1ab25196';
 // Запит жанрів
 export async function fetchGenres() {
   const { data } = await axios(

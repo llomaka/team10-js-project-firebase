@@ -7,6 +7,30 @@ import onScroll from './js/scrollUpBtn';
 import onLoaderVisible from './js/onLoaderVisible';
 import renderMainPage from './js/renderMainPage';
 import './sass/main.scss';
+import { initializeApp } from 'firebase/app';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { getFirestore, collection } from 'firebase/firestore';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAz5NnVTxsmxCeYZqtfnfTHMShB31Yek1s",
+  authDomain: "fson43-team10-js-project.firebaseapp.com",
+  projectId: "fson43-team10-js-project",
+  storageBucket: "fson43-team10-js-project.appspot.com",
+  messagingSenderId: "807239686844",
+  appId: "1:807239686844:web:ed9e9926c30813e9faceb9",
+  measurementId: "G-HJ9V9VEX0X"
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+onAuthStateChanged(auth, user => {
+  if (user !== null) {
+    console.log('logged in!');
+  } else {
+    console.log('No user');
+  }
+});
+const currentFilmStorage = collection(db, 'currentFilms');
 
 const refs = getRefs();
 
