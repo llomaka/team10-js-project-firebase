@@ -44,6 +44,8 @@ function onFetchMovieRequest(movies) {
   }
 
   renderGallery(movies.results);
+  refs.mainRef.querySelector('.filter__btn--active').classList.remove('filter__btn--active');
+  refs.filterBtnDaily.classList.add('filter__btn--active');
   renderingPlaceholder();
   addDataToLocalStorage(refs.movieKey, movies);
   onLoaderHidden();
